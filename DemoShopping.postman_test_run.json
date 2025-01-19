@@ -1,0 +1,304 @@
+{
+	"id": "2add9efa-f380-4d42-b69b-600ac938aa8f",
+	"name": "DemoShopping",
+	"timestamp": "2025-01-19T16:22:34.958Z",
+	"collection_id": "38565621-7075209b-be66-48c3-a0da-1ccc1608575e",
+	"folder_id": 0,
+	"environment_id": "38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919",
+	"totalPass": 22,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-01-19T16:22:33.788Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5c6685af-5f72-4dcc-9846-b15c3035e31f",
+			"name": "Список всех продуктов в каталоге возвращается, Code 200 при GET-запросе на /products",
+			"url": "https://qa.demoshopping.ru/products",
+			"time": 29,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifying status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Verifying status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				29
+			],
+			"allTests": [
+				{
+					"Verifying status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "4a69e786-e151-47b1-b7ad-4161c6e0f7c9",
+			"name": "Данные о товаре возвращаются, Code 200 при GET-запросе с существующим id товара на /products/id/:id",
+			"url": "https://qa.demoshopping.ru/products/id/19111",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify that all values are correct": true,
+				"Status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Verify that all values are correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Verify that all values are correct": true,
+					"Status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "0b4b7a11-baad-4671-84d8-86c8bf861545",
+			"name": "Данные о товаре не возвращаются, Code 404 при GET-запросе с несуществующим id товара на /products/id/:id",
+			"url": "https://qa.demoshopping.ru/products/id/100500",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 200ms": true,
+				"Content-Type is present": true,
+				"Response text is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response text is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 200ms": true,
+					"Content-Type is present": true,
+					"Response text is correct": true
+				}
+			]
+		},
+		{
+			"id": "d59bdc95-efaa-4039-bc74-a6f012c26447",
+			"name": "Добавление нового продукта, Code 200 при POST-запросе с валидным телом на /add-product",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 78,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify that all values are correct": true,
+				"Verify status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Verify that all values are correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				78
+			],
+			"allTests": [
+				{
+					"Verify that all values are correct": true,
+					"Verify status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "9c8c1c95-a45a-45d7-9d7c-70ae313a689d",
+			"name": "Новый продукт не добавляется, Code 400 при POST-запросе с пустым параметром name на /add-product",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Content-Type is present": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Content-Type is present": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "30ea737d-363f-4144-984c-e21ef03dea1f",
+			"name": "Товар из основного каталога не удаляется,  Code 403 при DELETE-запросе на /products/id/:id",
+			"url": "https://qa.demoshopping.ru/products/id/1",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true,
+				"Content-Type is present": true,
+				"Response time is less than 200ms": true,
+				"Response text is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response text is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status code is 403": true,
+					"Content-Type is present": true,
+					"Response time is less than 200ms": true,
+					"Response text is correct": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 145,
+	"collection": {
+		"requests": [
+			{
+				"id": "5c6685af-5f72-4dcc-9846-b15c3035e31f",
+				"method": "GET"
+			},
+			{
+				"id": "4a69e786-e151-47b1-b7ad-4161c6e0f7c9",
+				"method": "GET"
+			},
+			{
+				"id": "0b4b7a11-baad-4671-84d8-86c8bf861545",
+				"method": "GET"
+			},
+			{
+				"id": "d59bdc95-efaa-4039-bc74-a6f012c26447",
+				"method": "POST"
+			},
+			{
+				"id": "9c8c1c95-a45a-45d7-9d7c-70ae313a689d",
+				"method": "POST"
+			},
+			{
+				"id": "30ea737d-363f-4144-984c-e21ef03dea1f",
+				"method": "DELETE"
+			}
+		]
+	}
+}
