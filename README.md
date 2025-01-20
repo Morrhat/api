@@ -9,3 +9,6 @@
 - **DemoShopping** Postman Run Collection "Интернет-магазина" - [Public link](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_test_run.json)
 ---
 - Коллекция Postman **CountryInfoService** SOAP-сервис - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/collection/38565621-39eab923-7c3c-4468-8a11-fd2e548dc018?action=share&creator=38565621&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
+---
+- Коллекция Postman для функции генерации данных "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-40d813b1-1c36-4bfe-bd40-2fb42b333e87?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
+- Тест-кейсы QASE для API Интернет-магазина - [Public link](https://github.com/Morrhat/api/blob/main/API%20Testing%20-G9-2025-01-20.pdf)
