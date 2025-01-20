@@ -5,5 +5,7 @@
 - Коллекция Postman для модуля - **Cart** "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-fab03c53-6990-40d7-97e1-0c119b2491c9?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
 - Коллекция Postman для модуля - **Orders**  "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-098a378d-1e19-4845-923a-93ddf9db440c?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
 - Коллекция Postman для модуля - **Payment**  "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-03a6d57f-a4f6-4bfc-9e2c-465edd5e4da9?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-
-- **DemoShopping** Postmab Run Collection "Интернет-магазина" - [Public link](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_test_run.json)
+---
+- **DemoShopping** Postman Run Collection "Интернет-магазина" - [Public link](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_test_run.json)
+---
+- Коллекция Postman **CountryInfoService** SOAP-сервис - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/collection/38565621-39eab923-7c3c-4468-8a11-fd2e548dc018?action=share&creator=38565621&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
