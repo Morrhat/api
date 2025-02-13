@@ -1,0 +1,1346 @@
+{
+	"info": {
+		"_postman_id": "39eab923-7c3c-4468-8a11-fd2e548dc018",
+		"name": "SOAP-service",
+		"description": "API for http:// webservices.oorsprong.org/\n\nContact Support:  \nName: Kristina Pylzy  \nEmail: [kovengor@gmail.com](https://mailto:kovengor@gmail.com)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38565621",
+		"_collection_link": "https://www.postman.com/orbital-module-explorer-5398637/api-testing-rusau/collection/8uo72s7/soap-service?action=share&source=collection_link&creator=38565621"
+	},
+	"item": [
+		{
+			"name": "Список континентов в алфавитном порядке возвращается, Code 200 при SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfContinentsByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Continents By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список континентов не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfContinentsByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Continents By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список континентов не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"ListOfContinentsByName\": {\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Continents By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список континентов не возвращается, Code 500 при пустом Body в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Continents By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список валют в алфавитном порядке возвращается, Code 200 при SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfCurrenciesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Currencies By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список валют не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfCurrenciesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Currencies By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список валют не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"ListOfCurrenciesByName\": {\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Currencies By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список валют не возвращается, Code 500 при пустом Body в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Currencies By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список стран в алфавитном порядке возвращается, Code 200 при SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfCountryNamesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Country Names By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список стран не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <ListOfCountryNamesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Country Names By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список стран не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"ListOfCountryNamesByName\": {\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Country Names By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Список стран не возвращается, Code 500 при пустом Body в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "List Of Country Names By Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Название страны возвращается, Code 200 при SOAP-запросе с ISO-кодом страны",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>FI</sCountryISOCode>\r\n        </CountryName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Name By ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Название страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с числовым значением ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>77</sCountryISOCode>\r\n        </CountryName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Name By ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Название страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с пустым значением ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode></sCountryISOCode>\r\n        </CountryName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Name By ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Название страны не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"CountryName\": {\r\n\t\t\t\t\"sCountryISOCode\": \"FI\",\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Name By ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Название страны не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>FI</sCountryISOCode>\r\n        </CountryName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Name By ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "ISO-код страны возвращается, Code 200 при SOAP-запросе с названием страны",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryISOCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryName>Finland</sCountryName>\r\n        </CountryISOCode>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country ISO-Code By Country Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "ISO-код страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с числовым вводом названия",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryISOCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryName>77</sCountryName>\r\n        </CountryISOCode>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country ISO-Code By Country Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "ISO-код страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с пустым вводом названия",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryISOCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryName></sCountryName>\r\n        </CountryISOCode>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country ISO-Code By Country Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "ISO-код страны не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"CountryISOCode\": {\r\n\t\t\t\t\"sCountryName\": \"Finland\",\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country ISO-Code By Country Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "ISO-код страны не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <CountryISOCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryName>Finland</sCountryName>\r\n        </CountryISOCode>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country ISO-Code By Country Name from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Справка о стране возвращается, Code 200 при SOAP-запросе с ISO-кодом страны",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <FullCountryInfo xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>FIN</sCountryISOCode>\r\n        </FullCountryInfo>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Full Country Info By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Справка о стране не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с числовым вводом ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <FullCountryInfo xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>77</sCountryISOCode>\r\n        </FullCountryInfo>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Full Country Info By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Справка о стране не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с пустым вводом ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <FullCountryInfo xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode></sCountryISOCode>\r\n        </FullCountryInfo>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Full Country Info By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Справка о стране не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"FullCountryInfo\": {\r\n\t\t\t\t\"sCountryISOCode\": \"FIN\",\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Full Country Info By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Справка о стране не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <FullCountryInfo xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sCountryISOCode>FIN</sCountryISOCode>\r\n        </FullCountryInfo>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Full Country Info By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Язык страны возвращается, Code 200 при SOAP-запросе с ISO-кодом страны",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <LanguageName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sISOCode>FIN</sISOCode>\r\n        </LanguageName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Language Name By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Язык страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с числовым вводом ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <LanguageName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sISOCode>77</sISOCode>\r\n        </LanguageName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Language Name By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Язык страны не возвращается, выводится сообщение об ошибке, Code 200 при SOAP-запросе с пустым вводом ISO-кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <LanguageName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sISOCode></sISOCode>\r\n        </LanguageName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Language Name By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Язык страны не возвращается, Code 500 при отправке Body в JSON в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Envelope\": {\r\n\t\t\"Body\": {\r\n\t\t\t\"LanguageName\": {\r\n\t\t\t\t\"sISOCode\": \"FIN\",\r\n\t\t\t\t\"_xmlns\": \"http://www.oorsprong.org/websamples.countryinfo\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"_xmlns\": \"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Language Name By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		},
+		{
+			"name": "Язык страны не возвращается, Code 415 при отсутствии Headers Content-Type:text/xml в SOAP-запросе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <LanguageName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n            <sISOCode>FIN</sISOCode>\r\n        </LanguageName>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"oorsprong",
+						"org"
+					],
+					"path": [
+						"websamples.countryinfo",
+						"CountryInfoService.wso"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				},
+				"description": "Find Country Language Name By Country ISO-Code from Country Info Service on website http:// webservices.oorsprong.org/"
+			},
+			"response": []
+		}
+	]
+}

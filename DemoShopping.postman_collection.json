@@ -1,0 +1,2665 @@
+{
+	"info": {
+		"_postman_id": "7075209b-be66-48c3-a0da-1ccc1608575e",
+		"name": "DemoShopping",
+		"description": "API for DemoDhopping online store\n\nContact Support:  \nName: Kristina Pylzy  \nEmail: [kovengor@gmail.com](https://mailto:kovengor@gmail.com)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38565621",
+		"_collection_link": "https://www.postman.com/orbital-module-explorer-5398637/api-testing-rusau/collection/nmzloz8/demoshopping?action=share&source=collection_link&creator=38565621"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Список всех продуктов в каталоге возвращается, Code 200 при GET-запросе на /products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifying status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"\tpm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"\tpm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные о товаре возвращаются, Code 200 при GET-запросе с существующим id товара на /products/id/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify that all values are correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.product_id).that.is.a('number');\r",
+									"    pm.expect(jsonData.name).that.is.a('string');\r",
+									"    pm.expect(jsonData.description).that.is.a('string');\r",
+									"    pm.expect(jsonData.price).that.is.a('string');\r",
+									"    pm.expect(jsonData.category).that.is.a('string');\r",
+									"    pm.expect(jsonData.manufacturer).that.is.a('string');\r",
+									"    pm.expect(jsonData.imageUrl).that.is.a('string');\r",
+									"    pm.expect(jsonData.freeShipping).that.is.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"\tpm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные о товаре не возвращаются, Code 404 при GET-запросе с несуществующим id товара на /products/id/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response text is correct\", function () {\r",
+									"    pm.response.to.have.body(\"Товар с таким ID не найден\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/id/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление нового продукта, Code 200 при POST-запросе с валидным телом на /add-product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Получаем текст ответа\r",
+									"let responseText = pm.response.text();\r",
+									"// Используем регулярное выражение для поиска ID\r",
+									"let idMatch = responseText.match(/ID:\\s*(\\d+)/);\r",
+									"\r",
+									"if (idMatch) {\r",
+									"    // Извлекаем ID\r",
+									"    let id = idMatch[1];\r",
+									"    // Сохраняем ID в переменную окружения\r",
+									"    //pm.collectionVariables.set(\"productId\", id);\r",
+									"    pm.environment.set(\"productId\", id);\r",
+									"    // Выводим ID в консоль для проверки\r",
+									"    console.log(\"Извлеченный ID:\", id);\r",
+									"} else {\r",
+									"    console.log(\"ID не найден в ответе\");\r",
+									"}\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify that all values are correct\", function () {\r",
+									"    // Получаем значение productId из переменных окружения\r",
+									"    let productId = pm.environment.get(\"productId\");\r",
+									"    // Извлекаем текст тела ответа\r",
+									"    let responseBody = pm.response.text();\r",
+									"    // Формируем ожидаемую строку\r",
+									"    let expectedMessage = `Продукт успешно добавлен с ID: ${productId}`;\r",
+									"    // Утверждаем, что ответ содержит ожидаемое сообщение\r",
+									"    pm.expect(responseBody).to.include(expectedMessage);\r",
+									"    // Логирование для отладки\r",
+									"    console.log(\"Expected message to be included: \", expectedMessage);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"\tpm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Example Product\",\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 100,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"imageUrl\": \"http://example.com/image.jpg\",\r\n  \"freeShipping\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Новый продукт не добавляется, Code 400 при POST-запросе с пустым параметром name на /add-product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": ,\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 100,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"imageUrl\": \"http://example.com/image.jpg\",\r\n  \"freeShipping\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар из основного каталога не удаляется,  Code 403 при DELETE-запросе на /products/id/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response text is correct\", function () {\r",
+									"    pm.response.to.have.body(\"Удаление этого товара запрещено\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/id/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар, удалённый из каталога не удяется,  Code 404 при DELETE-запросе на /products/id/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар из добавленного каталога удаляется, Code 200 при DELETE-запросе на /products/id/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара полностью обновляются,  Code 200 при PUT-запросе на /products/id/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Example Product-2\",\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 200,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"imageUrl\": \"http://example.com/image2.jpg\",\r\n  \"freeShipping\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара не обновляются, Code 400 при PUT-запросе с пустым параметром name на /products/id/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": ,\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 200,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"imageUrl\": \"http://example.com/image2.jpg\",\r\n  \"freeShipping\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара с несуществующим id не обновляются, Code 404 при PUT-запросе на /products/id/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Example Product-2\",\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 200,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"imageUrl\": \"http://example.com/image2.jpg\",\r\n  \"freeShipping\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара частично обновляются, Code 200 при PATCH-запросе на /products/id/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"price\": 0,\r\n  \"category\": \"string\",\r\n  \"manufacturer\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара частично не обновляются, Code 400 при PATCH-запросе с пустым параметром name на /products/id/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": ,\r\n  \"description\": \"string\",\r\n  \"price\": 0,\r\n  \"category\": \"string\",\r\n  \"manufacturer\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные товара с несуществующим id частично не обновляются, Code 404 при PATCH-запросе на /products/id/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"price\": 0,\r\n  \"category\": \"string\",\r\n  \"manufacturer\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров, отфильтрованный по категории, возвращается, Code 200 при GET-запросе на /products/FindByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByCategory?category={{category}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByCategory"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "{{category}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Фильтр не применяется по несуществующей категории, Code 404 при GET-запроса на /products/FindByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByCategory?category=Electron",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByCategory"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Electron"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров, отфильтрованный по производителю, возвращается, Code 200 при GET-запросе на /products/FindByManufacturer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByManufacturer?manufacturer={{manufacturer}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByManufacturer"
+							],
+							"query": [
+								{
+									"key": "manufacturer",
+									"value": "{{manufacturer}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Фильтр не применяется по несуществующему производителю, Code 404 при GET-запросе на /products/FindByManufacturer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByManufacturer?manufacturer=Aple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByManufacturer"
+							],
+							"query": [
+								{
+									"key": "manufacturer",
+									"value": "Aple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров, отфильтрованный по бесплатной доставке, возвращается, Code 200 при GET-запросе на /products/FindByShipping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByShipping?freeShipping=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByShipping"
+							],
+							"query": [
+								{
+									"key": "freeShipping",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров, отфильтрованный по платной доставке, возвращается, Code 200 при GET-запросе на /products/FindByShipping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/FindByShipping?freeShipping=false",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"FindByShipping"
+							],
+							"query": [
+								{
+									"key": "freeShipping",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров, отфильтрованный по параметрам, возвращается, Code 200 при GET-запросе на /products/filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/filter?category=Laptops&manufacturer=Apple&freeShipping=false&minPrice=50&maxPrice=2000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Laptops"
+								},
+								{
+									"key": "manufacturer",
+									"value": "Apple"
+								},
+								{
+									"key": "freeShipping",
+									"value": "false"
+								},
+								{
+									"key": "minPrice",
+									"value": "50"
+								},
+								{
+									"key": "maxPrice",
+									"value": "2000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка запроса, список товаров не возвращается, Code 400 при GET-запросе на /products/filter Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/filter?category=Laptops&manufacturer=Apple&freeShipping=false&minPrice=50&maxPrice=2000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Laptops"
+								},
+								{
+									"key": "manufacturer",
+									"value": "Apple"
+								},
+								{
+									"key": "freeShipping",
+									"value": "false"
+								},
+								{
+									"key": "minPrice",
+									"value": "50"
+								},
+								{
+									"key": "maxPrice",
+									"value": "2000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Products API Testing from DemoShopping"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Регистрация пользователя происходит, Code 200 при валидном POST-запросе на /register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"ladyinblack6\",\r\n  \"password\": \"password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Регистрация пользователя не происходит, Code 400 при неверных данных пользователя POST-запроса на /register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Регистрации уже существующего пользователя не происходит, Code 400 при POST-запросе на /register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация пользователя происходит,  Code 200 при валидном POST-запросе на /login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"ladyinblack6\",\r\n  \"password\": \"password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация пользователя не происходит, Code 400 при неверных данных пользователя POST-запроса на /login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление нового пользователя происходит, Code 200 при отправке валидного POST-запроса на /users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"ladyinblack3\",\r\n  \"password\": \"password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление нового пользователя не происходит, Code 400 при неверных данных пользователя POST-запроса на /users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список всех user_id и login возвращается,  Code 200 при GET-запросе на /users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, список не возвращается,  Code 500 при GET-запросе на /users Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление пользователя с существующим id, Code 200 при отправке DELETE-запроса на /users/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Пользователь с несуществующим id не удаляется, Code 404 при отправке DELETE-запроса на /users/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Users API Testing from DemoShopping"
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Добавление товара в корзину авторизованного пользователя, Code 200 при POST-запросе на /cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар не добавляется в корзину неавторизованного пользователя, Code 401 при POST-запросе на /cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар не добавляется в корзину авторизованного пользователя, Code 400 при неверном POST-запросе на /cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, товар не добавляется, Code 500 при POST-запросе на /cart Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t  \"productId\": 0,\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Возвращение содержимого корзины авторизованного пользователя, Code 200 при GET-запросе на /getCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/getCart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cодержимое корзины неавторизованного пользователя не возвращается, Code 401 при GET-запросе на /getCart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getCart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, содержимое корзины не возвращается, Code 500 при GET-запросе на /getCart Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getCart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление количества товара в корзине авторизованного пользователя, Code 200 при PATCH-запросе на /cart/cartItemID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Количество товара в корзине авторизованного пользователя не обновляется, Code 400 при пустом значении в PATCH-запросе на /cart/cartItemID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\":\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Количество товара в корзине неавторизованного пользователя не обновляется, Code 401 при PATCH-запросе на /cart/cartItemID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Количество несуществующего товара в корзине пользователя не обновляется, Code 404 при PATCH-запросе на /cart/cartItemID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, количество товара не обновляется, Code 500 при пустом PATCH-запросе на /cart/cartItemID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление товара из корзины авторизованного пользователя, Code 200 при DELETE-запросе на /cart/cartItemID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Неверный запрос, товар не удаляется из корзины, Code 400 при DELETE-запросе на /cart/cartItemID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар не удаляется из корзины неавторизованного пользователя, Code 401 при DELETE-запросе на /cart/cartItemID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cart/{{cartItemID}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"{{cartItemID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар, несуществующий в корзине, не удаляется, Code 404 при DELETE-запросе на /cart/cartItemID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cart/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, товар не удаляется, Code 500 при DELETE-запросе на /cart/cartItemID Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cart/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Cart API Testing from DemoShopping"
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Возвращение списка всех заказов авторизованого пользователя, Code 200 при GET-запросе на /user-orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user-orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Пустой cписок заказов авторизованного пользователя не возвращается, Code 404 при GET-запросе на /user-orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user-orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список заказов неавторизованого пользователя не возвращается, Code 401 при GET-запросе на /user-orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, Code 500 при GET-запросе на /user-orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание заказа из товаров корзины авторизованного пользователя, Code 201 при POST-запросе на /orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Заказ не создаётся из пустой корзины авторизованного пользователя, Code 400 при POST-запросе на /orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Заказ не создаётся у неавторизованного пользователя, Code 401 при POST-запросе на /orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, заказ не создаётся, Code 500 при POST-запросе на /orders Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление товара из заказа авторизованного пользователя, Code 200 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Неверный запрос, Code 400 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар из заказа неавторизованного пользователя не удаляется, Code 401 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар из заказа с несуществующим orderId не удаляется, Code 404 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/100500/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"100500",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар с несуществующим productId из заказа не удаляется, Code 404 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, Code 500 при DELETE-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение количества товара в заказе авторизованного пользователя, Code 200 при PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Неверный запрос, Code 400 при отсутствии значения параметра в PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\":\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Количество товара в заказе неавторизованного пользователя не изменяется, Code 401 при PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар из заказа с несуществующим orderId не изменяется, Code 404 при PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/100500/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"100500",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Товар с несуществующим productId из заказа не изменяется, Code 404 при PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/100500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"100500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, Code 500 при PATCH-запросе на /orders/:orderId/products/:productId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/{{orderId}}/products/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление общей суммы заказов авторизованного пользователя пользователя, Code 200 при POST-запросе на /update-order-total",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/update-orders-total",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-orders-total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Общая сумма заказов неавторизованного пользователя не обновляется, Code 401 при POST-запросе на /update-order-total",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/update-orders-total",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-orders-total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, общая сумма заказа не обновляется, Code 500 при POST-запросе на /update-order-total",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/update-orders-total",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-orders-total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение данных об оплаченных заказах авторизованного пользователя, Code 200 при GET-запросе на /api/orders-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/orders-history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orders-history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные об оплаченных заказах неавторизованного пользователя не возвращаются, Code 401 при GET-запросе на /api/orders-history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/orders-history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orders-history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, данные об оплаченных заказах не возвращаются, Code 500 при GET-запросе на /api/orders-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/orders-history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orders-history"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Orders API Testing from DemoShopping"
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Платеж успешно проведен, оплачены заказы авторизованного пользователя, Code 200 при POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"8820354696467284\",\r\n  \"expiry_month\": 12,\r\n  \"expiry_year\": 26,\r\n  \"cvv\": \"123\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Платеж авторизованного пользователя не проведен, Code 404 при отсутствии заказов на оплату в POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"8820354696467284\",\r\n  \"expiry_month\": 12,\r\n  \"expiry_year\": 26,\r\n  \"cvv\": \"123\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Платеж не проведен, не оплачены заказы неавторизованного пользователя, Code 401 при POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"8820354696467284\",\r\n  \"expiry_month\": 12,\r\n  \"expiry_year\": 26,\r\n  \"cvv\": \"123\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Платеж не проведен, не оплачены заказы авторизованного пользователя, Code 400 при ошибке в данных карты в POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"8820354696467280\",\r\n  \"expiry_month\": 12,\r\n  \"expiry_year\": 26,\r\n  \"cvv\": \"000\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Платеж не проведен, не оплачены заказы авторизованного пользователя, Code 400 при недостатке средств карты в POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"7178218557247775\",\r\n  \"expiry_month\": 12,\r\n  \"expiry_year\": 26,\r\n  \"cvv\": \"890\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Платеж не проведен, не оплачены заказы авторизованного пользователя, Code 400 при недействительности карты в POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"4340511554108849\",\r\n  \"expiry_month\": 1,\r\n  \"expiry_year\": 20,\r\n  \"cvv\": \"789\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, платеж не проведен, не оплачены заказы авторизованного пользователя, Code 500 при POST-запросе на /pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{vault:authorization-secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card_type\": \"VISA\",\r\n  \"card_code\": \"4340511554108849\",\r\n  \"expiry_month\": 1,\r\n  \"expiry_year\": 20,\r\n  \"cvv\": \"789\",\r\n  \"email\": \"user@example.com\",\r\n  \"email_paypal\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление балансов карт и PayPal, Code 200 при GET-запросе на /updateBalances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/updateBalances",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateBalances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ошибка сервера, балансы карт и PayPal не обновляются, Code 500 при GET-запросе на /updateBalances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/updateBalances",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateBalances"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Payment API Testing from DemoShopping"
+		},
+		{
+			"name": "Adding new products - data generation",
+			"item": [
+				{
+					"name": "Добавление нового продукта, Code 200 при POST-запросе с валидным телом на /add-product Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Получаем текст ответа\r",
+									"let responseText = pm.response.text();\r",
+									"// Используем регулярное выражение для поиска ID\r",
+									"let idMatch = responseText.match(/ID:\\s*(\\d+)/);\r",
+									"\r",
+									"if (idMatch) {\r",
+									"    // Извлекаем ID\r",
+									"    let id = idMatch[1];\r",
+									"    // Сохраняем ID в переменную окружения\r",
+									"    //pm.collectionVariables.set(\"productId\", id);\r",
+									"    pm.environment.set(\"productId\", id);\r",
+									"    // Выводим ID в консоль для проверки\r",
+									"    console.log(\"Извлеченный ID:\", id);\r",
+									"} else {\r",
+									"    console.log(\"ID не найден в ответе\");\r",
+									"}\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify that all values are correct\", function () {\r",
+									"    // Получаем значение productId из переменных окружения\r",
+									"    let productId = pm.environment.get(\"productId\");\r",
+									"    // Извлекаем текст тела ответа\r",
+									"    let responseBody = pm.response.text();\r",
+									"    // Формируем ожидаемую строку\r",
+									"    let expectedMessage = `Продукт успешно добавлен с ID: ${productId}`;\r",
+									"    // Утверждаем, что ответ содержит ожидаемое сообщение\r",
+									"    pm.expect(responseBody).to.include(expectedMessage);\r",
+									"    // Логирование для отладки\r",
+									"    console.log(\"Expected message to be included: \", expectedMessage);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"\tpm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"price\", _.random(1,5000));\r",
+									"\r",
+									"pm.variables.set(\"shipping\", Math.random() < 0.5);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{$randomCountry}} {{$randomColor}} {{$randomSemver}}\",\r\n  \"description\": \"{{$randomStreetName}} {{$randomBoolean}} {{$randomBsNoun}}\",\r\n  \"price\": {{price}},\r\n  \"category\": \"{{$randomWeekday}}\",\r\n  \"manufacturer\": \"{{$randomCompanyName}}\",\r\n  \"imageUrl\": \"{{$randomAnimalsImage}}\",\r\n  \"freeShipping\": {{shipping}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные о товаре возвращаются, Code 200 при GET-запросе с существующим id товара на /products/id/:id Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify that all values are correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.product_id).that.is.a('number');\r",
+									"    pm.expect(jsonData.name).that.is.a('string');\r",
+									"    pm.expect(jsonData.description).that.is.a('string');\r",
+									"    pm.expect(jsonData.price).that.is.a('string');\r",
+									"    pm.expect(jsonData.category).that.is.a('string');\r",
+									"    pm.expect(jsonData.manufacturer).that.is.a('string');\r",
+									"    pm.expect(jsonData.imageUrl).that.is.a('string');\r",
+									"    pm.expect(jsonData.freeShipping).that.is.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"\tpm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/id/{{productId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Data generation method for Adding new products request"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
