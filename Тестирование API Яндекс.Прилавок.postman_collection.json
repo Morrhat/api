@@ -1,0 +1,3257 @@
+{
+	"info": {
+		"_postman_id": "fb2cb97e-fdf5-4664-985d-9e58444943cb",
+		"name": "Тестирование API Яндекс.Прилавок",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38565621"
+	},
+	"item": [
+		{
+			"name": "Доставка: \"Привезём быстро\" POST /fast-delivery/v3.1.1/calculate-delivery.xml",
+			"item": [
+				{
+					"name": "Валидация параметра ProductsCount",
+					"item": [
+						{
+							"name": "Граничное значение 0 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>0</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 1 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>1</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 6 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>6</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 7 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>7</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 8 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>8</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 5 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 9 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>9</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 13 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>13</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 14 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>14</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 15 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>15</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 12 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>12</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 16 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>16</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 22 принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>22</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Отрицательное значение не принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>-5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка букв не принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>8A</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка со спецсимволами не принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>8$</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом перед числом принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount> 5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелов внутри числа принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>1 1</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом после числа принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5 </productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"0*\" принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>05</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"*0\" принимается для параметра \"productsCount\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>10</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение \"00\" принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>00</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с запятой не принимается для параметра \"productsCount\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>0,5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Ввод больше 2х символов принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>555</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с точкой не принимается для параметра \"productsCount\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>0.5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение параметра \"productsCount\" обязательно для заполнения ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>4</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустой ввод не принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount></productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение -1 не принимается для параметра \"productsCount\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>-1</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Валидация параметра productsWeight",
+					"item": [
+						{
+							"name": "Граничное значение 0 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 0.001 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.001</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 0.01 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.01</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 0.1 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.1</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.499 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.499</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.49 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.49</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.4 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.5 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.5</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.501 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.501</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.51 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.51</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.6 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.6</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение 2 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.599 принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.599</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.59 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.59</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.601 принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.601</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.61 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.61</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 2.7 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2.7</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 5.999 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5.999</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 5.99 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5.99</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 5.9 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5.9</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 6 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>6</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 6.001 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>6.001</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 6.01 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>6.01</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 6.1 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>6.1</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение 4 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 7 принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>7</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение 8 принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>8</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Отрицательное значение не принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>-5</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка букв не принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5A</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка со спецсимволами не принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5$</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом перед числом принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight> 5</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелов внутри числа принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>1 1</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом после числа принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>5 </productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с запятой не принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0,5</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"0*\" принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>05</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение \"0.0\" принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.0</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение формата \"0.*\" принимается для параметра \"productsWeight\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.5</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение формата \"0.0*\" принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.05</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение для параметра \"productsWeight\" обязательно для заполнения при отправке запроса",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение формата \"0.00*\" принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>0.005</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустой ввод не принимается для параметра \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight></productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Валидация параметра DeliveryTime",
+					"item": [
+						{
+							"name": "Граничное значение 6 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>6</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 7 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>7</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 8 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 20 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>20</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 21 принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>21</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 22 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>22</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение 12 принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>12</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 0 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>0</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 1 принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>1</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 5 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>5</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение 4 принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>4</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 23 принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>23</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Граничное значение 24 принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>24</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Отрицательное значение не принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>-8</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка букв не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8A</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка со спецсимволами не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8$</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с запятой не принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8,1</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с точкой не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8.1</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Запись времени формата \"00:00\" не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>10:20</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом перед числом принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime> 8</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом после числа принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8 </deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелов внутри числа не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>1 1</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение \"00\" не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>00</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"0*\" принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>08</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"*0\" принимается для параметра \"deliveryTime\" ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>10</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Ввод больше 2-х символов не принимается для параметра \"deliveryTime\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>555</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение параметра \"deliveryTime\" обязательно для заполнения при отправке запроса",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>8</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Тестирование API",
+					"item": [
+						{
+							"name": "Рассчёт по доставке курьерской службой Привезём быстро формируется, при отправке запроса на URL /fast-delivery/v3.1.1/calculate-delivery.xml",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой Привезём быстро формируется для неавторизованного пользователя, при отправке запроса на URL /fast-delivery/v3.1.1/calculate-delivery.xml",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой Привезём быстро формируется для авторизованного пользователя",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"isItPossibleToDeliver\" в ответе на запрос на URL службы доставки Привезём быстро возвращает значение true, если в запросе параметр \"deliveryTime\" находится в диапазоне [7; 21]",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"isItPossibleToDeliver\" в ответе на запрос на URL службы доставки Привезём быстро возвращает значение false, если в запросе параметр \"deliveryTime\" не находится в диапазоне [7; 21]",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>23</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"hostDeliveryCost\": 23 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\"<=7 и  \"productsWeight\"<=2,5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"hostDeliveryCost\": 43 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\">7 и  \"productsWeight\"<=2,5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>9</productsCount>\r\n    <productsWeight>2</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"hostDeliveryCost\": 43 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\"<=7 и \"productsWeight\">2,5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"hostDeliveryCost\": 43 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\">7 и \"productsWeight\">2,5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>9</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"clientDeliveryCost\": 0 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\"<=14 и  \"productsWeight\"<=6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"clientDeliveryCost\": 99 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\">14 и  \"productsWeight\"<=6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>17</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"clientDeliveryCost\": 99 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\"<=14 и  \"productsWeight\">6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>8</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Параметр \"clientDeliveryCost\": 99 в ответе на запрос на URL службы доставки Привезём быстро, если параметры в запросе:  \"productsCount\">14 и  \"productsWeight\">6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>17</productsCount>\r\n    <productsWeight>8</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой формируется при введении всех валидных значений параметров: \"productsCount\" и  \"productsWeight\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при введении всех значений параметров, кроме \"productsCount\" - количества продуктов в заказе",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount></productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при введении всех значений параметров, кроме \"productsWeight\" - веса продуктов в заказе",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight></productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при введении валидных значений параметров, кроме \"productsCount\" - количества продуктов в заказе",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>55%</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при введении валидных значений параметров, кроме \"productsWeight\" - веса продуктов в заказе",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>55%</productsWeight>\r\n    <deliveryTime>14</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при введении валидных значений параметров, кроме \"deliveryTime\" - планируемого времени доставки",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<InputModel>\r\n    <productsCount>5</productsCount>\r\n    <productsWeight>4</productsWeight>\r\n    <deliveryTime>55%</deliveryTime>\r\n</InputModel>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при неккоректной структуре данных в теле запроса XML",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 11\r\n}",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						},
+						{
+							"name": "Рассчёт по доставке курьерской службой не формируется, при пустом теле запроса XML",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Получение продуктов в корзине GET /api/v1/orders/:id",
+			"item": [
+				{
+					"name": "Список продуктов, добавленных в корзину, можно получить при отправке запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model. Передается url-параметром",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов, добавленных в свою корзину, неавторизованный пользователь может получить при отправке GET запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов, добавленных в свою корзину, авторизованный пользователь может получить при отправке GET запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AuthToken}}",
+								"type": "text"
+							}
+						],
+						"url": "{{server_url}}/api/v1/orders/13"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов, добавленных в корзину авторизованного пользователя, не может получить неавторизованный пользователь при отправке GET запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/13"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов, добавленных в существующую корзину, можно получить на запрос GET /api/v1/orders/:id, где :id - id корзины, указанной в таблице order_model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов нельзя получить на запрос GET /api/v1/orders/:id, где :id - id корзины, не существующей в таблице order_model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/500"
+					},
+					"response": []
+				},
+				{
+					"name": "Список продуктов корзины нельзя получить на запрос GET /api/v1/orders/:id, где :id - id невалидное значение корзины, неуказанное в таблице order_model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_url}}/api/v1/orders/5%"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление товаров в корзину PUT /api/v1/orders/:id",
+			"item": [
+				{
+					"name": "Валидация параметра \"id\"",
+					"item": [
+						{
+							"name": "Целочисленное значение принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Отрицательное значение не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"-5\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/7"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка со спецсимволами не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"5%\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка букв не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"5A\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с запятой не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"5,5\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с точкой не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 5.5,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом перед числом принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \" 5\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелов внутри числа не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"5 5\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом после числа принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"5 \",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Нулевое значение не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": null,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение \"00\" не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"00\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"0*\" принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"05\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"*0\" принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"10\",\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение для параметра \"id\" в теле запроса обязательно для заполнения при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустой ввод не принимается для параметра \"id\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": ,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/12"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Валидация параметра \"quantity\"",
+					"item": [
+						{
+							"name": "Целочисленное значение принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/12"
+							},
+							"response": []
+						},
+						{
+							"name": "Отрицательное значение не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": -5 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/12"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка букв не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5A\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка со спецсимволами не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5%\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с запятой не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5,5\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Дробное число с точкой не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5.5\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом перед числом принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \" 5\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелов внутри числа не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5 5\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Строка с пробелом после числа не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"5 \" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Нулевое значение не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": null }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение для параметра \"quantity\" в теле запроса обязательно для заполнения при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/18"
+							},
+							"response": []
+						},
+						{
+							"name": "Двусимвольный ввод формата \"0*\" принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 05 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/18"
+							},
+							"response": []
+						},
+						{
+							"name": "Значение \"00\" не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 00 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/18"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустой ввод не принимается для параметра \"quantity\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\":  }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/18"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Тестирование API",
+					"item": [
+						{
+							"name": "Добавить продукты в корзину можно через запрос на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model. Передается url-параметром",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 3,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/7"
+							},
+							"response": []
+						},
+						{
+							"name": "Добавлять продукты в свою корзину неавторизованный пользователь может при отправке PUT запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AuthToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 3,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/7"
+							},
+							"response": []
+						},
+						{
+							"name": "Добавлять продукты в свою корзину авторизованный пользователь может при отправке PUT запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 3,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/13"
+							},
+							"response": []
+						},
+						{
+							"name": "Невозможно добавлять продукты в корзину авторизованного пользователя через запрос PUT от неавторизованного пользователя на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AuthToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 3,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/13"
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину успешно добавляются новые товары при запросе PUT /api/v1/orders/:id, когда все параметры валидны",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/2",
+								"description": "\"id\": в запросе - валидное id существующей корзины в таблице order_modul;\r\n\"productsList\": в теле запроса массив, содержащий параметры;\r\n\"id\": - валидное id существующего продукта в таблице product_model;\r\n\"quantity\": - количество продукта, которое имеется на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: \"id\": в запросе - валидное id несуществующей корзины",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/100",
+								"description": "\"id\": в запросе - валидное id несуществующей корзины;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - валидное id существующего продукта в таблице product_model;  \n\"quantity\": - количество продукта, которое имеется на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: \"id\": - валидное id несуществующего продукта",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 100500,\r\n            \"quantity\": 4 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5",
+								"description": "\"id\": в запросе - валидное id существующей корзины в таблице order_modul;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - валидное id несуществующего продукта;  \n\"quantity\": - количество продукта, которое имеется на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда \"quantity\": - указано количество продукта, которого недостаточно на складе",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 89 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5",
+								"description": "\"id\": в запросе - валидное id существующей корзины в таблице order_modul;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - валидное id существующего продукта в таблице product_model;  \n\"quantity\": - указано количество продукта, которого недостаточно на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: \"id\": в запросе - невалидное id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": 4 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5%",
+								"description": "\"id\": в запросе - невалидное id корзины;\r\n\"productsList\": в теле запроса массив, содержащий параметры;\r\n\"id\": - валидное id существующего продукта в таблице product_model;\r\n\"quantity\": - количество продукта, которое имеется на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: \"id\": - невалидное id продукта",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": \"1%\",\r\n            \"quantity\": 4 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5",
+								"description": "\"id\": в запросе - валидное id существующей корзины в таблице order_modul;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - невалидное id продукта в таблице product_model;  \n\"quantity\": - количество продукта, которое имеется на складе."
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: \"quantity\": - указано невалидное количество продукта",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 1,\r\n            \"quantity\": \"4%\" }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5",
+								"description": "StartFragment\"id\": в запросе - валидное id существующей корзины в таблице order_modul;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - валидное id существующего продукта в таблице product_model;  \n\"quantity\": - указано невалидное количество продукта.EndFragment"
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: нарушена JSON структура данных в теле запроса.",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<productsList>\r\n    <id>5</id>\r\n    <quantity>2</quantity>\r\n</productsList>",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5",
+								"description": "StartFragment\"id\": в запросе - валидное id существующей корзины в таблице order_modul;  \n\"productsList\": в теле запроса массив, содержащий параметры;  \n\"id\": - валидное id существующего продукта в таблице product_model;  \n\"quantity\": - количество продукта, которое имеется на складе;  \nнарушена JSON структура данных в теле запроса.EndFragment"
+							},
+							"response": []
+						},
+						{
+							"name": "В корзину не добавляются новые товары при запросе PUT /api/v1/orders/:id, когда: тело запроса пустое.",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/5"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Валидация параметра productList",
+					"item": [
+						{
+							"name": "Один валидный объект принимается для параметра \"productList\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [\r\n        { \"id\": 3,\r\n            \"quantity\": 1 }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/10"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустой массив не принимается для параметра \"productList\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": [  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/10"
+							},
+							"response": []
+						},
+						{
+							"name": "Пустая строка не принимается для параметра \"productList\" в теле запроса при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productsList\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/10"
+							},
+							"response": []
+						},
+						{
+							"name": "Отсутствие параметра \"productList\" в теле запроса не принимается при отправке запроса PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"id\": 1,\r\n            \"quantity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Ввод none не принимается для тела запроса при отправке PUT /api/v1/orders/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "none",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server_url}}/api/v1/orders/10"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Удаление корзины DELETE /api/v1/orders/:id",
+			"item": [
+				{
+					"name": "Удалить корзину можно через запрос на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model. Передается url-параметром",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "При повторной отправке запроса DELETE /api/v1/orders/:id, где :id - id корзины, которая уже удалена, вернётся сообщение \"Корзина не найдена\"",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Удалять свою корзину неавторизованный пользователь может при отправке DELETE запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Удалять свою корзину авторизованный пользователь может при отправке DELETE запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Неавторизованный пользователь не может удалять корзину авторизованного пользователя при отправке DELETE запроса на URL /api/v1/orders/:id, где :id - id корзины в таблице order_model.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/3"
+					},
+					"response": []
+				},
+				{
+					"name": "При отправке запроса DELETE /api/v1/orders/:id, где :id - id несуществующей корзины в таблице order_model, вернётся сообщение \"Корзина не найдена\"",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/500"
+					},
+					"response": []
+				},
+				{
+					"name": "При отправке запроса DELETE /api/v1/orders/:id, где :id - невалидный id корзины, вернётся сообщение об ошибке",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/api/v1/orders/5%"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
