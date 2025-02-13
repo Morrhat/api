@@ -1,14 +1,49 @@
 # Тестирование API
-- Коллекция Postman **DemoShopping** "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/collection/38565621-7075209b-be66-48c3-a0da-1ccc1608575e?action=share&creator=38565621&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Коллекция Postman для модуля – **Products** "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-c03f7f22-2f5c-41a1-baca-4ff371d67143?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Коллекция Postman для модуля - **Users** "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-855c7ae6-e889-4cec-ac1f-095b5e723483?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Коллекция Postman для модуля - **Cart** "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-fab03c53-6990-40d7-97e1-0c119b2491c9?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Коллекция Postman для модуля - **Orders**  "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-098a378d-1e19-4845-923a-93ddf9db440c?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Коллекция Postman для модуля - **Payment**  "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-03a6d57f-a4f6-4bfc-9e2c-465edd5e4da9?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
+
+## Тестирование веб-приложения `Интернет-магазин` qa.demoshopping
+
+#### Коллекция запросов Postman для тестирования backend веб-приложения `Интернет-магазин`.
+> Коллекция содержит проверки, основанные на документации в Swagger, для 5 модулей: **Products**, **Users**, **Cart**, **Orders**, **Payment**. Отдельная папка выделена для запросов с функцией генерации данных для проверок "Интернет-магазина". Для некоторых тестов API автоматизированы проверки, спроектированы тест-кейсы.
+- [Коллекция Postman **DemoShopping** "Интернет-магазина"](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_collection.json)
+
+- [Postman Run Collection с автоматизацией тестирования **API "Интернет-магазина"**](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_test_run.json)
+
+- [Тест-кейсы запросов QASE для тестирования backend **API "Интернет-магазина"**](https://github.com/Morrhat/api/blob/main/API%20Testing%20-G9-2025-01-20.pdf)
+
+
+## Тестирование SOAP-сервиса `CountryInfoService` 
+> **CountryInfoService** - сервис, с помощью которого можно получить о странах различную информацию.
+> Коллекция содержит проверки для следующих методов: <br>
+> ListOfContinentsByName <br>
+> ListOfCurrenciesByName <br>
+> ListOfCountryNamesByName <br>
+> CountryName <br>
+> CountryISOCode <br>
+> FullCountryInfo <br>
+> LanguageName  <br>
+- [Коллекция Postman **CountryInfoService** SOAP-сервис](https://github.com/Morrhat/api/blob/main/SOAP-service.postman_collection.json)
+
+
+
+## Тестирование `API Яндекс.Прилавок`
+
+#### Коллекция Postman с результатами тестирования HTTP-запросов (POST, GET, PUT, DELETE) для API веб-приложения `Яндекс.Прилавок`.
+> Коллекция содержит проверки для четырёх эндпоинтов: <br>
+> POST /fast-delivery/v3.1.1/calculate-delivery.xml,<br>
+> GET /api/v1/orders/:id,<br>
+> PUT /api/v1/orders/:id, <br>
+> DELETE /api/v1/orders/:id, 
+- [Таблица - Чек-лист с результатами тестирования HTTP-запросов](https://docs.google.com/spreadsheets/d/1G63bnfarMwZ9nyfRYtR0g2ipdNGesBzKfSVHo5EXqBI/edit?usp=sharing)
+
+- [Коллекция Postman **API Яндекс.Прилавок**](https://github.com/Morrhat/api/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20API%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.%D0%9F%D1%80%D0%B8%D0%BB%D0%B0%D0%B2%D0%BE%D0%BA.postman_collection.json)
+
+- [Таблица - Отчеты о дефектах при отправке HTTP-запросов (POST, GET, PUT, DELETE) для API веб-приложения **Яндекс.Прилавок**](https://docs.google.com/spreadsheets/d/1dfRfFcslteLSWSj74QBCkPOT0C7qQ9x8Iq7J1LCCZWs/edit?usp=sharing)
+
+
+
+
+
 ---
-- **DemoShopping** Postman Run Collection "Интернет-магазина" - [Public link](https://github.com/Morrhat/api/blob/main/DemoShopping.postman_test_run.json)
----
-- Коллекция Postman **CountryInfoService** SOAP-сервис - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/collection/38565621-39eab923-7c3c-4468-8a11-fd2e548dc018?action=share&creator=38565621&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
----
-- Коллекция Postman для функции генерации данных "Интернет-магазина" - [Public link](https://www.postman.com/orbital-module-explorer-5398637/workspace/api-testing-rusau/folder/38565621-40d813b1-1c36-4bfe-bd40-2fb42b333e87?action=share&creator=38565621&ctx=documentation&active-environment=38565621-e03a3b86-1747-48ac-9e8c-d4c21d347919)
-- Тест-кейсы QASE для API Интернет-магазина - [Public link](https://github.com/Morrhat/api/blob/main/API%20Testing%20-G9-2025-01-20.pdf)
+                                                          2025
+
+
